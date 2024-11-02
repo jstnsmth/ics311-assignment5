@@ -1,4 +1,7 @@
 package src;
+import src.core.Island;
+import src.core.Graph;
+import src.problems.Problem2;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +10,7 @@ public class Main {
 
 
         // Problem 2
+        System.out.println("-------- Question 2 --------");
         Graph graph2 = new Graph(300);
         int totalResource = 300;
         graph2.loadGraphData("data/island-data.txt");

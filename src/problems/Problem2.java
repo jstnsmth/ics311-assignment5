@@ -1,12 +1,13 @@
-package src;
+package src.problems;
+import src.core.Graph;
+import src.core.Island;
 import java.util.HashMap;
 import java.util.Stack;
+
 
 public class Problem2 {
     public static void distributeResources(Graph graph, Island sourceIsland, int totalResource) {
         HashMap<Island, Island> previousNode = graph.distributeResources(sourceIsland, totalResource);
-
-        System.out.println("-------- Question 2 --------");
         for (Island island : graph.getAllIslands()) {
             if (!island.equals(sourceIsland)) {
                 printPath(previousNode, sourceIsland, island);

@@ -1,4 +1,4 @@
-package src;
+package src.core;
 import java.util.HashMap;
 
 public class Island {
