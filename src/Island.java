@@ -1,8 +1,10 @@
+package src;
 import java.util.HashMap;
 
 public class Island {
     private String name;
     private int population;
+    private int receivedResources;
     private HashMap<String, Integer>resources;
 
     public Island(String name, int population) {
@@ -26,4 +28,13 @@ public class Island {
     public HashMap<String, Integer> getResources() {
         return resources;
     }
+
+    public void addReceivedResources(double amount) {
+        receivedResources += amount;
+    }
+
+    public double getReceivedResources() {
+        return receivedResources;
+    }
+
 }

@@ -1,0 +1,6 @@
+{
+    "type": "java",
+    "request": "launch",
+    "name": "Launch Main",
+    "mainClass": "src.Main"
+  }
