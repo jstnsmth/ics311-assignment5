@@ -47,19 +47,8 @@ public class Graph {
         return adjacentList.getOrDefault(island, new LinkedList<Route>());
     }
 
-    public Island getIslandByName(String islandName) {
-        Island[] islands = adjacentList.keySet().toArray(new Island[0]);
-
-        for (int i = 0; i < islands.length; i++) {
-            if (islands[i].getName().equals(islandName)) {
-                return islands[i];
-            }
-        }
-        return null;
-    }
-
     // Retrive an island by its name
-    public Island getIsland(String name) {
+    public Island getIslandByName(String name) {
         return islandMap.get(name);
     }
 

@@ -6,11 +6,12 @@ import src.problems.Problem2;
 public class Main {
     public static void main(String[] args) {
         // Problem 1
+        System.out.println("-------- Problem 1 --------");
 
 
 
         // Problem 2
-        System.out.println("-------- Question 2 --------");
+        System.out.println("-------- Problem 2 --------");
         Graph graph2 = new Graph(300);
         int totalResource = 300;
         graph2.loadGraphData("data/island-data.txt");
@@ -26,5 +27,9 @@ public class Main {
 
 
         // Problem 4
+        System.out.println("-------- Problem 4 --------");
+
+        
+
     }
 }
