@@ -5,11 +5,13 @@ public class Island {
     private String name;
     private int population;
     private HashMap<String, Integer>resources;
+    private int estimator;
 
     public Island(String name, int population) {
         this.name = name;
         this.population = population;
         this.resources = new HashMap<String, Integer>();
+        this.estimator = 0;
     }
 
     public void addResources(String resourceName, int amount) {

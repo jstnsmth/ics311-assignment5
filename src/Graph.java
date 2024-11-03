@@ -29,6 +29,11 @@ public class Graph {
         return adjacentList.getOrDefault(island, new LinkedList<Route>());
     }
 
+    public Island[] getAllIslands() {
+        Island[] allIslands = adjacentList.keySet().toArray(new Island[0]);
+        return allIslands;
+    }
+
     public Island getIslandByName(String islandName) {
         Island[] islands = adjacentList.keySet().toArray(new Island[0]);
 
