@@ -11,11 +11,8 @@ public class Main {
         graph.displayGraph();
 
         Island startIsland = graph.getIslandByName("Hawaii");
-        prompt3(graph, startIsland,100,2, 20);
+        prompt3(graph, startIsland,100,2, 50);
         System.out.println("Shortest paths from Hawai'i: ");
-        for (Island island: graph.getAllIslands()) {
-            System.out.println(startIsland.getName() + " -> " + island.getName() + " is " + island.getEstimator()) ;
-        }
 
         printPath(graph, startIsland);
     }
@@ -55,7 +52,45 @@ public class Main {
             }
         }
 
-        int availableCanoes = numCanoes;
+        List<LinkedList<Island>> paths = new ArrayList<>();
+
+        for (Island destination : graph.getAllIslands()) {
+            if (destination != startIsland) {
+                LinkedList<Island> path = new LinkedList<>();
+                Island current = destination;
+                while (current != null) {
+                    path.addFirst(current);
+                    current = current.getPredecessor();
+                }
+                if (path.getFirst() == startIsland) {
+                    paths.add(path);
+                }
+            }
+        }
+
+        for (LinkedList<Island> path : paths) {
+            System.out.println("Traversing path: " + path);
+
+            int currentCapacity = canoeCapacity;
+            int canoesLeft = numCanoes;
+
+            for (Island island : path) {
+                if (currentCapacity <= 0) {
+                    if (canoesLeft > 1) {
+                        canoesLeft--;
+                        currentCapacity = canoeCapacity;
+                        System.out.println("Sending another canoe. Canoes remaining: " + canoesLeft);
+                    } else {
+                        System.out.println("No more canoes avalable. Canoot continue path to " + island.getName());
+                        break;
+                    }
+                }
+                System.out.println("Visiting " + island.getName() + ", remaining capacity: " + currentCapacity);
+                currentCapacity -= resourceUsePerIsland;
+            }
+        }
+
+        /**int availableCanoes = numCanoes;
 
         for (Island targetIsland : graph.getAllIslands()) {
             if (targetIsland == startIsland) continue;
@@ -91,7 +126,7 @@ public class Main {
                 }
             }
             System.out.println("End of path for resource distribution to " + targetIsland.getName());
-        }
+        }*/
         
     }
 
@@ -113,7 +148,7 @@ public class Main {
 
             Collections.reverse(path);
 
-            System.out.println("Path from " + startIsland.getName() + " to " + island.getName());
+            System.out.println("Path from " + startIsland.getName() + " to " + island.getName() + " ( " + island.getEstimator() + " ) ");
             for (Island node : path) {
                 System.out.print(node.getName());
                 if (node != island) {
