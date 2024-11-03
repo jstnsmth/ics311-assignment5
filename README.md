@@ -15,23 +15,18 @@ This assignment for ICS311 is designed to simulate resource distribution, knowle
 2. **Knowledge Sharing**: Plans routes for leaders to visit islands and share skills with island populations in an efficient time.
 3. **Tourism Routes**: Calculate optimal routes for tourists to take inroder to visit multiple islands and experience unique attractions in minimal time.
 
-## Project Structure
-
+## Assignment Structure
 This assignment is divided into separate modules to manage different aspects of the island network and the individual problems:
-
--**src/core**: Core classes that define the main graph structure and island-related data.
-    -**Graph.java**: Defines the graph structure which represents the islands as vertices and time to travel as edges (non-negative).
-    -**Island.java**: Represents an island, includes data such as: name, population and resources.
-    -**Route.java**: Represents a route between two islands with travel time.
-
--**src/problems**: Contains classes for individually solved problems
-    -**Problem1.java**: Knowledege sharing problem - will calculate optimal routes for leader visits
-    -**Problem2.java**: Resource distribution problem - will determine efficient routes for resource distribution.
-    -**Problem4.java**: Tourism route planning - will calculate the optimal tourist routes based on experiences.
-
--**src/Main.java**: This is the main entry point for the program, contains coordinating problem execution and loading graph data.
-
--**data/island-data.txt**: A sample dataset for testing purposes, contains island and route information.
+- **src/core**: Core classes that define the main graph structure and island-related data.
+    - **Graph.java**: Defines the graph structure, representing the islands as vertices and time to travel as edges (non-negative).
+    - **Island.java**: Represents an island, includes data such as: name, population and resources.
+    - **Route.java**: Represents a route between two islands with travel time.
+- **src/problems**: Contains classes for individually solved problems
+    - **Problem1.java**: Knowledge sharing problem - will calculate optimal routes for leader visits.
+    - **Problem2.java**: Resource distribution problem - will determine efficient routes for resource distribution.
+    - **Problem4.java**: Tourism route planning - will calculate the optimal tourist routes based on experiences.
+- **src/Main.java**: This is the main entry point for the program, contains coordinating problem execution and loading graph data.
+- **data/island-data.txt**: A sample dataset for testing purposes, contains island and route information.
 
 ## Setup
 
