@@ -56,6 +56,9 @@ public class Main {
                 }
             }
         }
+
+        Canoe canoe = new Canoe();
+        
     }
 
     public static void printPath(Graph graph, Island startIsland) {
