@@ -81,7 +81,8 @@ public class Main {
                         currentCapacity = canoeCapacity;
                         System.out.println("Sending another canoe. Canoes remaining: " + canoesLeft);
                     } else {
-                        System.out.println("No more canoes avalable. Canoot continue path to " + island.getName());
+                        System.out.println("No more canoes available. Canoot continue path to " + island.getName());
+                        System.out.println("You must return to " + startIsland.getName() + " if possible.");
                         break;
                     }
                 }
