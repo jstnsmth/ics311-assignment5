@@ -1,11 +1,11 @@
-package src;
+package src.core;
 import java.util.HashMap;
 
 public class Island {
     private String name;
     private int population;
     private int receivedResources;
-    private HashMap<String, Integer>resources;
+    private HashMap<String, Integer> resources;
 
     public Island(String name, int population) {
         this.name = name;
@@ -36,5 +36,4 @@ public class Island {
     public double getReceivedResources() {
         return receivedResources;
     }
-
 }
