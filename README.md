@@ -56,6 +56,6 @@ Make sure Java is installed, preferably version 8 or higher.
 
 Run the `Main` class to execute the program. The `Main` file initializes the graph data and runs each problem module:
 
-    ```bash
-    java src.Main
-    ```
+```bash
+java src.Main
+```
