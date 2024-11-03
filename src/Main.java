@@ -26,27 +26,29 @@ public class Main {
         graph.loadGraphData("data/island-data.txt");
 
         HashMap<Island, Integer> shortestPaths = new HashMap<>();
-        PriorityQueue<Island> minPQ = new PriorityQueue<>(Comparator.comparingInt(island -> shortestPaths.get(island)));
+        PriorityQueue<Island> minPQ = new PriorityQueue<>(Comparator.comparingInt(island -> island.getEstimator()));
 
         // Initialization function
         // sets estimator for each island in graph to infinity
         for (Island island: graph.getAllIslands()) {
             // sets estimator of source island to 0 so that it is first in minPQ
             if(island.equals(startIsland)) {
-                shortestPaths.put(startIsland, 0);
+                island.setEstimator(0);
+                shortestPaths.put(island,0);
             } else {
+                island.setEstimator(Integer.MAX_VALUE);
                 shortestPaths.put(island, Integer.MAX_VALUE);
             }
             minPQ.add(island);
         }
 
-        Island currentIsland = minPQ.poll();
-        System.out.println(currentIsland);
+        //Island firstIsland = minPQ.poll();
+        //System.out.println(firstIsland.getName());
 
-        /**while(!minPQ.isEmpty()) {
+        while(!minPQ.isEmpty()) {
             Island currentIsland = minPQ.poll();
-            System.out.println(currentIsland);
-            int currentDistance = shortestPaths.get(currentIsland);
+            //System.out.println(currentIsland);
+            int currentDistance = currentIsland.getEstimator();
 
             for (Route route: graph.getIslandRoutes(currentIsland)) {
                 Island neighbor = route.getDestination();
@@ -54,10 +56,10 @@ public class Main {
 
                 if (newDist < shortestPaths.get(neighbor)) {
                     shortestPaths.put(neighbor,newDist);
-                    minPQ.add(neighbor);
+                    neighbor.setEstimator(newDist);
                 }
             }
-        }*/
+        }
         return shortestPaths;
     }
 }

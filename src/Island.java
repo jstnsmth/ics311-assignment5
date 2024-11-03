@@ -26,6 +26,13 @@ public class Island {
         return population;
     }
 
+    public int getEstimator() {return estimator; }
+
+    public int setEstimator(int newEstimate) {
+        this.estimator = newEstimate;
+        return estimator;
+    }
+
     public HashMap<String, Integer> getResources() {
         return resources;
     }
