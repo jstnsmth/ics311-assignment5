@@ -8,6 +8,7 @@ public class Island {
     private int estimator;
 
     private Island predecessor;
+    private HashMap<String, Integer>resourceTime;
 
     public Island(String name, int population) {
         this.name = name;
@@ -15,10 +16,17 @@ public class Island {
         this.resources = new HashMap<String, Integer>();
         this.estimator = 0;
         this.predecessor = null;
+        this.resourceTime = new HashMap<String, Integer>();
     }
 
     public void addResources(String resourceName, int amount) {
         resources.put(resourceName, amount);
+    }
+
+    public void addResourceTime(String resourceName, int time) {resourceTime.put(resourceName, time);}
+
+    public int getResourceTime(String resourceName){
+        return resourceTime.get(resourceName);
     }
 
     public String getName() {

@@ -28,6 +28,8 @@ public class Main {
         for (Island island : graph.getAllIslands()) {
             island.setEstimator(island.equals(startIsland) ? 0 : Integer.MAX_VALUE);
             minPQ.add(island);
+            int randInt = 500 + (int) (Math.random() * ((2000 - 500) + 1));
+            island.addResourceTime("Kalo", randInt);
         }
 
 
@@ -44,7 +46,7 @@ public class Main {
                 Island neighbor = route.getDestination();
                 if (settled.contains(neighbor)) continue;
 
-                int newDist = currentIsland.getEstimator() + route.getTravelTime();
+                int newDist = currentIsland.getEstimator() + route.getTravelTime() + neighbor.getResourceTime("Kalo");
                 if (newDist < neighbor.getEstimator()) {
                     minPQ.remove(neighbor);
                     neighbor.setEstimator(newDist);
