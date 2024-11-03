@@ -7,11 +7,14 @@ public class Island {
     private HashMap<String, Integer>resources;
     private int estimator;
 
+    private Island predecessor;
+
     public Island(String name, int population) {
         this.name = name;
         this.population = population;
         this.resources = new HashMap<String, Integer>();
         this.estimator = 0;
+        this.predecessor = null;
     }
 
     public void addResources(String resourceName, int amount) {
@@ -31,6 +34,13 @@ public class Island {
     public int setEstimator(int newEstimate) {
         this.estimator = newEstimate;
         return estimator;
+    }
+
+    public Island getPredecessor() {return predecessor;}
+
+    public Island setPredecessor(Island island) {
+        this.predecessor = island;
+        return predecessor;
     }
 
     public HashMap<String, Integer> getResources() {
