@@ -28,7 +28,8 @@ public class Main {
         for (Island island : graph.getAllIslands()) {
             island.setEstimator(island.equals(startIsland) ? 0 : Integer.MAX_VALUE);
             minPQ.add(island);
-            int randInt = 500 + (int) (Math.random() * ((2000 - 500) + 1));
+            // Assigning a unique amount of time it takes to plant/grow plant on an island in graph.
+            int randInt = 500 + (int) (Math.random() * 1500);
             island.addResourceTime("Kalo", randInt);
         }
 
