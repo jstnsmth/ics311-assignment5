@@ -1,4 +1,4 @@
-package src;
+package src.core;
 import java.util.HashMap;
 
 public class Island {
@@ -9,6 +9,7 @@ public class Island {
 
     private Island predecessor;
     private HashMap<String, Integer>resourceTime;
+    private int receivedResources;
 
     public Island(String name, int population) {
         this.name = name;
@@ -50,8 +51,14 @@ public class Island {
         this.predecessor = island;
         return predecessor;
     }
-
     public HashMap<String, Integer> getResources() {
         return resources;
+    }
+    public void addReceivedResources(double amount) {
+        receivedResources += amount;
+    }
+
+    public double getReceivedResources() {
+        return receivedResources;
     }
 }
