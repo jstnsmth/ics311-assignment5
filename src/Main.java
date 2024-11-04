@@ -41,10 +41,9 @@ public class Main {
         Graph graph3 = new Graph();
         graph3.loadGraphData("data/island-data.txt");
 
-
+        System.out.println("Shortest paths from Hawai'i: ");
         Island startIsland = graph.getIslandByName("Hawaii");
         prompt3(graph, startIsland,100,2, 50);
-        System.out.println("Shortest paths from Hawai'i: ");
 
         //printPath(graph, startIsland);
     }
