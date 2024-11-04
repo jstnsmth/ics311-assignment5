@@ -1,4 +1,4 @@
-package src;
+package src.core;
 
 public class Route {
     private Island destination;
