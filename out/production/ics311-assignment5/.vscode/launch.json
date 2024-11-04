@@ -1,0 +1,15 @@
+{
+    "type": "java",
+    "request": "launch",
+    "name": "Launch Main",
+    "mainClass": "src.Main",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Main",
+        "request": "launch",
+        "mainClass": "src.Main",
+        "projectName": "ics311-assignment5_b2f68817"
+      }
+    ]
+  }
