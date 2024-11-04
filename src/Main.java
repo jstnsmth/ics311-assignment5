@@ -14,7 +14,7 @@ public class Main {
         prompt3(graph, startIsland,100,2, 50);
         System.out.println("Shortest paths from Hawai'i: ");
 
-        printPath(graph, startIsland);
+        //printPath(graph, startIsland);
     }
 
     // Dijkstra's algorithm for question 3
@@ -69,69 +69,31 @@ public class Main {
         }
 
         for (LinkedList<Island> path : paths) {
-            System.out.println("Traversing path: " + path);
 
             int currentCapacity = canoeCapacity;
             int canoesLeft = numCanoes;
 
             for (Island island : path) {
+                System.out.println("Visiting " + island.getName() + ", Remaining capacity: " + currentCapacity + " Time(distribute and plant): " + island.getEstimator() );
                 if (currentCapacity <= 0) {
                     if (canoesLeft > 1) {
                         canoesLeft--;
                         currentCapacity = canoeCapacity;
                         System.out.println("Sending another canoe. Canoes remaining: " + canoesLeft);
                     } else {
-                        System.out.println("No more canoes available. Canoot continue path to " + island.getName());
+                        System.out.println("No more canoes available. Cannot continue path to " + island.getName());
                         System.out.println("You must return to " + startIsland.getName() + " if possible.");
                         break;
                     }
                 }
-                System.out.println("Visiting " + island.getName() + ", remaining capacity: " + currentCapacity);
                 currentCapacity -= resourceUsePerIsland;
             }
+            System.out.println("\n");
         }
 
-        /**int availableCanoes = numCanoes;
-
-        for (Island targetIsland : graph.getAllIslands()) {
-            if (targetIsland == startIsland) continue;
-
-            int currentCanoeCapacity = canoeCapacity;
-            List<Island> path = new ArrayList<>();
-            Island current = targetIsland;
-
-            while (current != null) {
-                path.add(current);
-                current = current.getPredecessor();
-            }
-
-            Collections.reverse(path);
-
-            System.out.println("Distributing resource to " + targetIsland.getName() + " via path: ");
-            for (Island island : path) {
-                System.out.print(island.getName() + " -> ");
-
-                currentCanoeCapacity -= resourceUsePerIsland;
-
-                if (currentCanoeCapacity <= 0 ) {
-                    if (island == startIsland){
-                        System.out.println("\nCanoe reloading at source: " + startIsland.getName());
-                        currentCanoeCapacity = canoeCapacity;
-                    } else if ( availableCanoes > 1 ) {
-                        availableCanoes--;
-                        System.out.println("\nUsing a new canoe to continue to " + targetIsland.getName());
-                    } else {
-                        System.out.println("\nNo more canoes available to complete the route to " + targetIsland.getName());
-                        break;
-                    }
-                }
-            }
-            System.out.println("End of path for resource distribution to " + targetIsland.getName());
-        }*/
-        
     }
 
-    public static void printPath(Graph graph, Island startIsland) {
+    /**public static void printPath(Graph graph, Island startIsland) {
 
         for (Island island: graph.getAllIslands()) {
             List<Island> path = new ArrayList<>();
@@ -158,6 +120,6 @@ public class Main {
             }
             System.out.println();
         }
-    }
+    }*/
 
 }
