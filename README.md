@@ -4,16 +4,9 @@ This assignment for ICS311 is designed to simulate resource distribution, knowle
 
 ## Table of Contents
 
-- [Features](#features)
 - [Assignment Structure](#assignment-structure)
 - [Setup](#setup)
 - [How to Run](#how-to-run)
-
-## Features
-
-1. **Resource Distribution**: Distributes resources efficently from a single source island, taking into account canoe capacity and travel time constraints
-2. **Knowledge Sharing**: Plans routes for leaders to visit islands and share skills with island populations in an efficient time.
-3. **Tourism Routes**: Calculate optimal routes for tourists to take inroder to visit multiple islands and experience unique attractions in minimal time.
 
 ## Assignment Structure
 This assignment is divided into separate modules to manage different aspects of the island network and the individual problems:
@@ -24,7 +17,7 @@ This assignment is divided into separate modules to manage different aspects of 
 - **src/problems**: Contains classes for individually solved problems
     - `Problem1.java`: Knowledge sharing problem - will calculate optimal routes for leader visits.
     - `Problem2.java`: Resource distribution problem - will determine efficient routes for resource distribution.
-    - `Problem4.java`: Tourism route planning - will calculate the optimal tourist routes based on experiences.
+    - `Problem3.java`: Crop distribution problem - will efficiently distribute a certain type of crop on one island to the rest of the islands.
 - **src/Main.java**: This is the main entry point for the program, contains coordinating problem execution and loading graph data.
 - **data/island-data.txt**: A sample dataset for testing purposes, contains island and route information.
 
