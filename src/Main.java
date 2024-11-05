@@ -1,24 +1,20 @@
 package src;
 import src.core.Island;
 import src.core.Graph;
+import src.problems.Problem1;
 import src.problems.Problem2;
-
-import java.sql.Array;
-import java.util.*;
 
 import static src.problems.Problem3.prompt3;
 
 public class Main {
     public static void main(String[] args) {
-        // Just for testing purposes
-        Graph graph = new Graph();
-        graph.loadGraphData("data/island-data.txt");
-        graph.displayGraph();
 
         // Problem 1
         System.out.println("-------- Problem 1 --------");
-
-
+        Graph graph = new Graph();
+        graph.loadGraphData("data/island-data.txt");
+        Problem1 problem1 = new Problem1(graph, graph.getIslandByName("Hawaii"));
+        problem1.startKnowledgeSharing(6);
 
         // Problem 2
         System.out.println("-------- Problem 2 --------");
@@ -33,8 +29,6 @@ public class Main {
         else {
             System.out.println("Error: Source island not found.");
         }
-
-
 
         // Problem 3
         System.out.println("-------- Problem 3 --------");
